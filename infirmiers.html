@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation en Soins Infirmiers - MOAY Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: 'black',
+                        accent: '#3b82f6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .slide-in-left {
+            transform: translateX(-50px);
+            opacity: 0;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+        
+        .slide-in-right {
+            transform: translateX(50px);
+            opacity: 0;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+        }
+        
+        .slide-in-left.active, .slide-in-right.active {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        section {
+            scroll-margin-top: 80px;
+        }
+        
+        /* Dropdown menu styles */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            margin-top: 8px;
+        }
+        
+        .dropdown:hover .dropdown-menu,
+        .dropdown.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: #000;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: #f3f4f6;
+            color: #3b82f6;
+            padding-left: 24px;
+        }
+        
+        .dropdown-menu a:first-child {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        
+        .dropdown-menu a:last-child {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Barre de navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">MOAY<span class="text-accent">ACADEMY</span></a>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-secondary hover:text-accent transition-colors">Accueil</a>
+                <a href="index.html#apropos" class="text-secondary hover:text-accent transition-colors">À propos</a>
+                <div class="dropdown">
+                    <a href="#" class="text-secondary hover:text-accent transition-colors flex items-center">
+                        Formation <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="cours-almand.html">Cours Allemagne</a>
+                        <a href="infirmiers.html" class="text-accent font-semibold">Formation Infirmiers</a>
+                    </div>
+                </div>
+                <a href="emploi.html" class="text-secondary hover:text-accent transition-colors">Emploi en Allemagne</a>
+                <a href="index.html#contact" class="text-secondary hover:text-accent transition-colors">Contact</a>
+            </div>
+            
+            <div class="flex space-x-4">
+                <a href="index.html#contact" class="bg-accent text-white px-4 py-2 rounded-lg hover:bg-primary transition-colors">Nous contacter</a>
+                <button id="mobile-menu-btn" class="md:hidden text-secondary">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="md:hidden bg-white shadow-lg hidden">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="text-secondary hover:text-accent transition-colors">Accueil</a>
+                <a href="index.html#apropos" class="text-secondary hover:text-accent transition-colors">À propos</a>
+                <div class="border-t pt-2">
+                    <button id="mobile-cours-btn" class="text-secondary hover:text-accent transition-colors flex items-center justify-between w-full">
+                        <span>Cours</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobile-cours-menu" class="hidden pl-4 mt-2 space-y-2">
+                        <a href="cours-almand.html" class="text-secondary hover:text-accent transition-colors block">Cours Présentiels</a>
+                        <a href="cours-en-ligne.html" class="text-secondary hover:text-accent transition-colors block">Cours en Ligne</a>
+                    </div>
+                </div>
+                <a href="infirmiers.html" class="text-accent font-semibold">Formation Infirmiers</a>
+                <a href="emploi.html" class="text-secondary hover:text-accent transition-colors">Emploi en Allemagne</a>
+                <a href="index.html#contact" class="text-secondary hover:text-accent transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Hero -->
+    <section class="pt-24 pb-20 bg-gradient-to-r from-primary to-accent text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Formation en Soins Infirmiers en Allemagne</h1>
+                <p class="text-xl text-gray-100 mb-2">Réalisez votre rêve de devenir infirmier en Allemagne</p>
+                <p class="text-lg text-gray-200 max-w-2xl mx-auto">Nous accompagnons les personnes souhaitant rejoindre une formation en soins infirmiers (Pflegefachfrau/Pflegefachmann) dans les hôpitaux ou centres de soins en Allemagne.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contenu Principal -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden slide-in-right">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 bg-cover bg-center" style="background-image: url('doctor.jpg'); min-height: 400px;"></div>
+                        <div class="md:w-1/2 p-8">
+                            <h2 class="text-2xl font-bold text-primary mb-4">Nos services comprennent :</h2>
+                            <ul class="text-secondary space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mt-1 mr-3"></i>
+                                    <span>Orientation vers des MOAYs et centres de formation partenaires en Allemagne</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mt-1 mr-3"></i>
+                                    <span>Préparation linguistique jusqu'au niveau requis (B1/B2)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mt-1 mr-3"></i>
+                                    <span>Préparation aux entretiens en allemand</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mt-1 mr-3"></i>
+                                    <span>Aide au montage de dossier</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mt-1 mr-3"></i>
+                                    <span>Assistance pour le visa et les démarches administratives</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-accent mt-1 mr-3"></i>
+                                    <span>Suivi jusqu'à votre arrivée en Allemagne</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section Informations Complémentaires -->
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg slide-in-left">
+                        <h3 class="text-xl font-bold text-primary mb-4">
+                            <i class="fas fa-graduation-cap text-accent mr-2"></i>
+                            Formation Complète
+                        </h3>
+                        <p class="text-secondary">
+                            La formation en soins infirmiers en Allemagne dure généralement 3 ans et combine théorie et pratique dans des établissements de santé partenaires.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg slide-in-right">
+                        <h3 class="text-xl font-bold text-primary mb-4">
+                            <i class="fas fa-language text-accent mr-2"></i>
+                            Prérequis Linguistiques
+                        </h3>
+                        <p class="text-secondary">
+                            Un niveau B1/B2 en allemand est généralement requis. Nous vous accompagnons pour atteindre ce niveau avec nos cours spécialisés.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <a href="index.html#contact" class="bg-accent text-white px-8 py-3 rounded-lg font-medium hover:bg-primary transition-colors inline-block">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">MOAY<span class="text-accent">ACADEMY</span></h3>
+                    <p class="text-gray-300 mb-4">Formation d'excellence pour les professionnels de demain.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
+                            <span>oran</span>
+                        </p>
+                        <p class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-3 text-accent"></i>
+                            <span>+33 1 23 45 67 89</span>
+                        </p>
+                        <p class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-accent"></i>
+                            <span>contact@MOAYACADEMY.fr</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Liens rapides</h4>
+                    <div class="flex flex-col space-y-2">
+                        <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Accueil</a>
+                        <a href="index.html#apropos" class="text-gray-300 hover:text-white transition-colors">À propos</a>
+                        <a href="infirmiers.html" class="text-gray-300 hover:text-white transition-colors">Formation Infirmiers</a>
+                        <a href="cours-almand.html" class="text-gray-300 hover:text-white transition-colors">Cours Présentiels</a>
+                        <a href="cours-en-ligne.html" class="text-gray-300 hover:text-white transition-colors">Cours en Ligne</a>
+                        <a href="emploi.html" class="text-gray-300 hover:text-white transition-colors">Emploi en Allemagne</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 MOAYACADEMY. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation au défilement
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Menu mobile
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileCoursBtn = document.getElementById('mobile-cours-btn');
+            const mobileCoursMenu = document.getElementById('mobile-cours-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            mobileCoursBtn.addEventListener('click', () => {
+                mobileCoursMenu.classList.toggle('hidden');
+                const icon = mobileCoursBtn.querySelector('i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+            
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileCoursMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
