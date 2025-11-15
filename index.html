@@ -13,7 +13,8 @@
                     colors: {
                         primary: '#1e40af',
                         secondary: 'black',
-                        accent: '#3b82f6'
+                        accent: '#3b82f6',
+                        fot:"#11224E"
                     }
                 }
             }
@@ -140,6 +141,7 @@
 </head>
 <body class="font-sans">
     <!-- Barre de navigation -->
+       <!-- Barre de navigation -->
     <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-primary">MOAY<span class="text-accent">ACADEMY</span></a>
@@ -157,11 +159,11 @@
                     </div>
                 </div>
                 <a href="emploi.html" class="text-secondary hover:text-accent transition-colors">Emploi en Allemagne</a>
-                <a href="index.html#contact" class="text-secondary hover:text-accent transition-colors">Contact</a>
+                <a href="index.html#contact" class="lg:hidden block text-secondary hover:text-accent transition-colors">Contact</a>
             </div>
             
             <div class="flex space-x-4">
-                <a href="index.html#contact" class="bg-accent text-white px-4 py-2 rounded-lg hover:bg-primary transition-colors">Nous contacter</a>
+                <a href="index.html#contact" class="lg:block hidden bg-accent text-white px-4 py-2 rounded-lg hover:bg-primary transition-colors">Nous contacter</a>
                 <button id="mobile-menu-btn" class="md:hidden text-secondary">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
@@ -196,7 +198,9 @@
         <div class="slider-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home2.jpg');">
             <div class="container mx-auto h-full flex items-center px-4">
                 <div class="text-white max-w-2xl fade-in">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4"> Bienvenue à MOAY Academy – Votre passerelle vers l'Allemagne</h1>
+                    <h1 class="text-4xl md:text-4xl font-bold mb-4"> Bienvenue à
+                         <span class="text-4xl md:text-5xl font-bold mb-4 text-primary" >MOAY</span>  <span class="text-accent">Academy</span>   
+                         Votre passerelle vers l'Allemagne</h1>
                     <p class="text-xl mb-8">MOAY Academy est une MOAY de langue allemande spécialisée dans l'apprentissage de l'allemand et l'accompagnement des personnes souhaitant étudier ou travailler en Allemagne.
 Que vous choisissiez des cours en présentiel ou en ligne, nos programmes sont conçus pour vous permettre de progresser rapidement et sereinement.
 Nous offrons également un service complet d'orientation pour les personnes souhaitant suivre une formation en soins infirmiers en Allemagne ou démarrer une carrière professionnelle dans différents secteurs en Allemagne.
@@ -210,8 +214,9 @@ Nous offrons également un service complet d'orientation pour les personnes souh
         <div class="slider-slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('home1.jpg');">
             <div class="container mx-auto h-full flex items-center px-4">
                 <div class="text-white max-w-2xl fade-in">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4"> Bienvenue à MOAY Academy – Votre passerelle vers l'Allemagne</h1>
-                    <p class="text-xl mb-8">MOAY Academy est une MOAY de langue allemande spécialisée dans l'apprentissage de l'allemand et l'accompagnement des personnes souhaitant étudier ou travailler en Allemagne.
+<h1 class="text-4xl md:text-5xl font-bold mb-4"> Bienvenue à
+                         <span class="text-4xl md:text-5xl font-bold mb-4 text-primary" >MOAY</span>  <span class="text-accent">Academy</span>   
+                         Votre passerelle vers l'Allemagne</h1>                    <p class="text-xl mb-8">MOAY Academy est une MOAY de langue allemande spécialisée dans l'apprentissage de l'allemand et l'accompagnement des personnes souhaitant étudier ou travailler en Allemagne.
 Que vous choisissiez des cours en présentiel ou en ligne, nos programmes sont conçus pour vous permettre de progresser rapidement et sereinement.
 Nous offrons également un service complet d'orientation pour les personnes souhaitant suivre une formation en soins infirmiers en Allemagne ou démarrer une carrière professionnelle dans différents secteurs en Allemagne.
 </p>
@@ -291,7 +296,7 @@ Nous offrons également un service complet d'orientation pour les personnes souh
 
         </div>
     </section>
-<footer id="contact" class="bg-primary text-white py-16"> 
+<footer id="contact" class="bg-fot text-white py-16"> 
     <div class="container mx-auto px-4"> 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12"> 
 
@@ -523,13 +528,13 @@ Nous offrons également un service complet d'orientation pour les personnes souh
             // Navigation fixe avec effet au défilement
             const nav = document.querySelector('nav');
             
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    nav.classList.add('bg-white', 'bg-opacity-95', 'backdrop-blur-sm');
-                } else {
-                    nav.classList.remove('bg-white', 'bg-opacity-95', 'backdrop-blur-sm');
-                }
-            });
+            // window.addEventListener('scroll', () => {
+            //     if (window.scrollY > 100) {
+            //         nav.classList.add('bg-white', 'bg-opacity-95', 'backdrop-blur-sm');
+            //     } else {
+            //         nav.classList.remove('bg-white', 'bg-opacity-95', 'backdrop-blur-sm');
+            //     }
+            // });
         });
     </script>
 </body>
