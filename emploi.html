@@ -251,64 +251,132 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-primary text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4">MOAY<span class="text-accent">ACADEMY</span></h3>
-                    <p class="text-gray-300 mb-4">Formation d'excellence pour les professionnels de demain.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+    <footer id="contact" class="bg-primary text-white py-16"> 
+    <div class="container mx-auto px-4"> 
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12"> 
+
+            <!-- Logo + description --> 
+            <div> 
+                <h3 class="text-2xl font-bold mb-4">MOAY<span class="text-accent">ACADEMY</span></h3> 
+                <p class="text-gray-300 mb-4"> 
+                    Formation d'excellence pour les professionnels de demain. 
+                </p> 
+
+                <div class="flex space-x-4 mt-4"> 
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors"> 
+                        <i class="fab fa-facebook-f"></i> 
+                    </a> 
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors"> 
+                        <i class="fab fa-instagram"></i> 
+                    </a> 
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors"> 
+                        <i class="fab fa-linkedin-in"></i> 
+                    </a> 
+                </div> 
+            </div> 
+
+            <!-- Contact Infos --> 
+            <div> 
+                <h4 class="text-xl font-bold mb-4">Contact</h4> 
+
+                <div class="space-y-3 text-gray-300"> 
+                    <p class="flex items-start"> 
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i> 
+                        <span>Oran, Algérie</span> 
+                    </p> 
+
+                    <p class="flex items-start"> 
+                        <i class="fas fa-phone mt-1 mr-3 text-accent"></i> 
+                        <span>+213 555 55 55 55</span> 
+                    </p> 
+
+                    <p class="flex items-start"> 
+                        <i class="fas fa-envelope mt-1 mr-3 text-accent"></i> 
+                        <span>contact@moayacademy.com</span> 
+                    </p> 
+                </div> 
+            </div> 
+
+            <!-- Formulaire clair (Nom, Prénom, etc.) -->
+            <div class="bg-gray-5 p-6" >
+                <h4 class="text-xl font-bold mb-4">Formulaire d'inscription</h4>
+
+                <form id="footerForm" class="space-y-4">
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <input type="text" placeholder="Nom" class="w-full px-3 py-2 rounded bg-white text-gray-800" required>
+                        <input type="text" placeholder="Prénom" class="w-full px-3 py-2 rounded bg-white text-gray-800" required>
                     </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-xl font-bold mb-4">Contact</h4>
-                    <div class="space-y-2 text-gray-300">
-                        <p class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-accent"></i>
-                            <span>oran</span>
-                        </p>
-                        <p class="flex items-start">
-                            <i class="fas fa-phone mt-1 mr-3 text-accent"></i>
-                            <span>+33 1 23 45 67 89</span>
-                        </p>
-                        <p class="flex items-start">
-                            <i class="fas fa-envelope mt-1 mr-3 text-accent"></i>
-                            <span>contact@MOAYACADEMY.fr</span>
-                        </p>
+
+                    <input type="date" placeholder="Date de naissance"
+                        class="w-full px-3 py-2 rounded bg-white text-gray-800" required>
+
+                    <input type="text" placeholder="Niveau de langue"
+                        class="w-full px-3 py-2 rounded bg-white text-gray-800" required>
+
+                    <!-- Choix formation -->
+                    <select id="formationSelectFooter"
+                        class="w-full px-3 py-2 rounded bg-white text-gray-800 cursor-pointer" required>
+                        <option value="">-- Choisir une formation --</option>
+                        <option value="allemand">Formation en Allemand</option>
+                        <option value="informatique">Formation Informatique</option>
+                        <option value="gestion">Formation en Gestion</option>
+                    </select>
+
+                    <!-- Niveaux Allemand -->
+                    <div id="allemandLevelsFooter" class="hidden">
+                        <label class="font-semibold block mb-1">Niveau :</label>
+
+                        <div class="grid grid-cols-2 gap-2 text-gray-200">
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" value="A1" class="accent-blue-600">
+                                <span>A1</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" value="A2" class="accent-blue-600">
+                                <span>A2</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" value="B1" class="accent-blue-600">
+                                <span>B1</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" value="B2" class="accent-blue-600">
+                                <span>B2</span>
+                            </label>
+                        </div>
                     </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-xl font-bold mb-4">Liens rapides</h4>
-                    <div class="flex flex-col space-y-2">
-                        <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Accueil</a>
-                        <a href="index.html#apropos" class="text-gray-300 hover:text-white transition-colors">À propos</a>
-                        <a href="infirmiers.html" class="text-gray-300 hover:text-white transition-colors">Formation Infirmiers</a>
-                        <a href="cours-almand.html" class="text-gray-300 hover:text-white transition-colors">Cours Présentiels</a>
-                        <a href="cours-en-ligne.html" class="text-gray-300 hover:text-white transition-colors">Cours en Ligne</a>
-                        <a href="emploi.html" class="text-gray-300 hover:text-white transition-colors">Emploi en Allemagne</a>
+
+                    <!-- Autres formations -->
+                    <div id="otherFormationsFooter" class="hidden">
+                        <label class="font-semibold block mb-1">Formations disponibles :</label>
+                        <ul class="list-disc ml-5 text-gray-300">
+                            <li>Formation Informatique</li>
+                            <li>Formation en Gestion</li>
+                        </ul>
                     </div>
-                </div>
+
+                    <input type="text" placeholder="Numéro de téléphone"
+                        class="w-full px-3 py-2 rounded bg-white text-gray-800" required>
+
+                    <input type="email" placeholder="Email"
+                        class="w-full px-3 py-2 rounded bg-white text-gray-800" required>
+
+                    <button type="submit"
+                        class="w-full bg-accent text-white py-3 rounded-lg font-medium hover:bg-white hover:text-primary transition">
+                        Envoyer
+                    </button>
+
+                </form>
             </div>
-            
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 MOAYACADEMY. Tous droits réservés.</p>
-            </div>
+
         </div>
-    </footer>
+
+        <div class="border-t border-gray-700 mt-12 pt-6 text-center text-gray-300">
+            <p>&copy; 2025 MOAYACADEMY. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
